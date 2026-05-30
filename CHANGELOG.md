@@ -2,6 +2,12 @@
 
 All notable changes to the CI4 FAQ Domain template will be documented in this file.
 
+## [1.0.1] — 2026-05-30
+
+### Fixed
+- Test directory case sensitivity: renamed `tests/Feature/` → `tests/feature/` and `tests/Integration/` → `tests/integration/` for Linux CI compatibility
+- Updated `phpunit.xml` to reference lowercase test directory paths
+
 ## [1.0.0] — 2026-05-30
 
 ### Added
