@@ -12,11 +12,6 @@
       "repo_name": "ci4-faq-hub"
     },
     {
-      "role": "admin",
-      "path": "ci4-faq-admin",
-      "repo_name": "ci4-faq-admin"
-    },
-    {
       "role": "domain",
       "path": "ci4-faq-domain",
       "repo_name": "ci4-faq-domain"
@@ -62,12 +57,37 @@
       ]
     }
   ],
-  "admin_modules": [
-    { "resource": "faq-categories", "sidebar_label": "FAQ Categories", "sidebar_icon": "folder" },
-    { "resource": "faqs", "sidebar_label": "FAQs", "sidebar_icon": "help-circle" }
+  "permissions": [
+    "faq.read",
+    "faq.write",
+    "faq.delete",
+    "faqCategory.read",
+    "faqCategory.write",
+    "faqCategory.delete"
   ],
-  "admin_sidebar": {
-    "section": "Support",
-    "items": ["faq-categories", "faqs"]
-  }
+  "admin_modules": [
+    {
+      "resource": "FaqCategory",
+      "module": "Faq",
+      "api_path": "/support/faq-categories",
+      "service": "domain",
+      "fields": "name:string:required,slug:string:required,is_active:boolean"
+    },
+    {
+      "resource": "Faq",
+      "module": "Faq",
+      "api_path": "/support/faqs",
+      "service": "domain",
+      "fields": "question:string:required,answer:text:required,category_id:relation:required:faqCategories,is_published:boolean,sort_order:int:required"
+    }
+  ],
+  "admin_sidebar": [
+    {
+      "module": "Faq",
+      "label": "Faq.sidebar_label",
+      "icon": "help-circle",
+      "permission": "faq.read",
+      "items": ["FaqCategory", "Faq"]
+    }
+  ]
 }
