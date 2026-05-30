@@ -40,8 +40,8 @@ final readonly class FaqCategoryResponseDTO implements DataTransferObjectInterfa
             name: (string) ($data['name'] ?? ''),
             slug: (string) ($data['slug'] ?? ''),
             is_active: (bool) ($data['is_active'] ?? false),
-            createdAt: $data['created_at'] ?? null,
-            updatedAt: $data['updated_at'] ?? null,
+            createdAt: isset($data['created_at']) ? (string) $data['created_at'] : null,
+            updatedAt: isset($data['updated_at']) ? (string) $data['updated_at'] : null,
         );
     }
 

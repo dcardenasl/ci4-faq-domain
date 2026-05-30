@@ -46,8 +46,8 @@ final readonly class FaqResponseDTO implements DataTransferObjectInterface
             category_id: (int) ($data['category_id'] ?? 0),
             is_published: (bool) ($data['is_published'] ?? false),
             sort_order: (int) ($data['sort_order'] ?? 0),
-            createdAt: $data['created_at'] ?? null,
-            updatedAt: $data['updated_at'] ?? null,
+            createdAt: isset($data['created_at']) ? (string) $data['created_at'] : null,
+            updatedAt: isset($data['updated_at']) ? (string) $data['updated_at'] : null,
         );
     }
 
