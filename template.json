@@ -58,12 +58,12 @@
     }
   ],
   "permissions": [
-    "faq.read",
-    "faq.write",
-    "faq.delete",
-    "faqCategory.read",
-    "faqCategory.write",
-    "faqCategory.delete"
+    { "code": "faq.read",          "roles": ["user", "admin", "superadmin"] },
+    { "code": "faq.write",         "roles": ["admin", "superadmin"] },
+    { "code": "faq.delete",        "roles": ["superadmin"] },
+    { "code": "faqCategory.read",  "roles": ["user", "admin", "superadmin"] },
+    { "code": "faqCategory.write", "roles": ["admin", "superadmin"] },
+    { "code": "faqCategory.delete","roles": ["superadmin"] }
   ],
   "admin_modules": [
     {

@@ -2,6 +2,12 @@
 
 All notable changes to the CI4 FAQ Domain template will be documented in this file.
 
+## [Unreleased]
+
+### Changed
+
+- **`template.json` permissions** — migrated from a flat string array to object format: `{"code": "...", "roles": [...]}`. The `roles` array declares which hub roles receive each permission at kickstart provisioning time, so the installer automatically assigns `admin` and `user` permissions without manual IAM configuration post-install.
+
 ## [1.0.1] — 2026-05-30
 
 ### Fixed
