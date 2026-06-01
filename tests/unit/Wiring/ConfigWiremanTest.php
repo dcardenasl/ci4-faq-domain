@@ -68,12 +68,25 @@ final class ConfigWiremanTest extends TestCase
         );
     }
 
-    private function makeWireman(): ConfigWireman
+    private function makeWireman(): object
     {
-        return new class (ScaffoldingConfig::defaults()) extends ConfigWireman {
+        $wireman = new ConfigWireman(ScaffoldingConfig::defaults());
+
+        return new class ($wireman) {
+            public function __construct(private readonly ConfigWireman $wireman)
+            {
+            }
+
             public function callRegisterPermissions(ResourceSchema $schema): void
             {
-                $this->registerPermissions($schema);
+                $method = new \ReflectionMethod($this->wireman, 'registerPermissions');
+                $method->setAccessible(true);
+                $method->invoke($this->wireman, $schema);
+            }
+
+            public function __get(string $name): mixed
+            {
+                return $this->wireman->{$name};
             }
         };
     }
