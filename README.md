@@ -120,6 +120,7 @@ php spark swagger:generate
 ```
 
 The generator emits routes already wrapped in `domainauth + permission:items.read + throttle`. Adjust the per-verb permission codes if read and write should diverge.
+This FAQ template already declares the base `items.read` permission in both `template.json` and `Config/DomainPermissions.php`, so `init.sh` can sync it to the hub and assign it to the expected roles during setup.
 
 When the module grows beyond flat CRUD, use the documented aggregate-extension pattern instead of forcing everything into the generated shape: [`docs/architecture/EXTENSION_GUIDE.md`](docs/architecture/EXTENSION_GUIDE.md).
 
@@ -129,6 +130,8 @@ When the module grows beyond flat CRUD, use the documented aggregate-extension p
 2. Run `php spark domain:sync-permissions` — registers it with the hub (idempotent).
 3. In the hub admin panel, attach the new permission to the role(s) that should carry it.
 4. Reference the code in your route filter: `permission:items.archive`.
+
+For FAQ templates specifically, keep the base `items.read` permission mirrored in `template.json` too, because the generated CRUD routes rely on it as the shared read gate.
 
 > **Permission separator is `.`, never `:`** — CI4's filter parser splits on `:` for arguments and silently truncates `permission:items:archive` to `permission:items`. See `TASKS.md` ⇒ "Architecture contracts".
 

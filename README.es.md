@@ -121,6 +121,7 @@ php spark swagger:generate
 ```
 
 El generador emite rutas ya envueltas en `domainauth + permission:items.read + throttle`. Ajusta los códigos de permiso por verbo si lectura y escritura deben divergir.
+Este template de FAQ ya declara el permiso base `items.read` tanto en `template.json` como en `Config/DomainPermissions.php`, así que `init.sh` puede sincronizarlo con el hub y asignarlo a los roles esperados durante el setup.
 
 ### Añadir un nuevo permiso
 
@@ -128,6 +129,8 @@ El generador emite rutas ya envueltas en `domainauth + permission:items.read + t
 2. Ejecuta `php spark domain:sync-permissions` — lo registra en el hub (idempotente).
 3. En el panel del hub, asigna el nuevo permiso al/los rol(es) que deban tenerlo.
 4. Referencia el código en tu filtro de ruta: `permission:items.archive`.
+
+En templates de FAQ, conserva también el permiso base `items.read` reflejado en `template.json`, porque las rutas CRUD generadas lo usan como gate compartido de lectura.
 
 > **El separador de permisos es `.`, nunca `:`** — el parser de filtros de CI4 divide por `:` para argumentos y trunca silenciosamente `permission:items:archive` en `permission:items`. Ver `TASKS.md` ⇒ "Architecture contracts".
 
