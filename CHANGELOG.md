@@ -2,6 +2,24 @@
 
 All notable changes to the CI4 FAQ Domain template will be documented in this file.
 
+## [Unreleased]
+
+## [1.1.0] — 2026-05-31
+
+### Added
+
+- **`template.json`** — machine-readable manifest declaring domain `entities`, `permissions`, and `admin_modules` for kickstart v1.11.0+ to scaffold the admin side automatically at install time.
+- **`admin_modules` schema** — each module entry specifies `entity`, `service` (`hub` or `domain`), `fields`, and `ui_mode`; kickstart reads this to generate matching admin module scaffolding.
+- **`permissions[]` with `roles[]`** — each permission entry carries a `roles[]` array declaring which hub roles receive it at provisioning time (e.g. `admin`, `user`), enabling zero-touch IAM setup during `install.sh`.
+
+### Changed
+
+- **`template.json` permissions format** — migrated from a flat string array to object format: `{"code": "...", "roles": [...]}`. Requires kickstart v1.11.0+.
+
+### Fixed
+
+- **`hub.appCode`** — set to `'faq'` in `.env.example` to align with the hub seeder's domain registration (TEMPL-010).
+
 ## [1.0.1] — 2026-05-30
 
 ### Fixed
