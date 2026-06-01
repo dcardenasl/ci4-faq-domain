@@ -24,6 +24,7 @@ class DomainPermissions
      * @var list<array{code: string, resource: string, action: string, description?: string}>
      */
     public const PERMISSIONS = [
+        ['code' => 'items.read',         'resource' => 'items',          'action' => 'read',   'description' => 'Base read access for FAQ routes'],
         ['code' => 'faq.read',            'resource' => 'faqs',           'action' => 'read',   'description' => 'Read FAQs'],
         ['code' => 'faq.write',           'resource' => 'faqs',           'action' => 'write',  'description' => 'Create/Update FAQs'],
         ['code' => 'faq.delete',          'resource' => 'faqs',           'action' => 'delete', 'description' => 'Delete FAQs'],

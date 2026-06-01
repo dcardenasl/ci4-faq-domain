@@ -80,6 +80,8 @@ Service tokens **cannot satisfy `iam.superadmin-access`**. That's why `domain:sy
 5. Hub admin attaches the new permission to whichever roles need it.
 ```
 
+For the FAQ template, keep the shared `items.read` gate in that catalog as well. The generated CRUD routes use it as their base read filter, and `template.json` mirrors it so the setup flow can assign it to the right roles automatically.
+
 The command is idempotent and safe to re-run after fixing hub-side state (missing `applications` row, wrong API key, etc.). It exits non-zero on the first auth failure so you don't spam the hub.
 
 ## What lives where

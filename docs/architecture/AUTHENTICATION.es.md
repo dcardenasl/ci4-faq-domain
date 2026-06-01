@@ -80,6 +80,8 @@ Los service tokens **no satisfacen `iam.superadmin-access`**. Por eso `domain:sy
 5. El admin del hub asigna el nuevo permiso a los roles que lo necesiten.
 ```
 
+Para el template de FAQ, conserva también el gate compartido `items.read` en ese catálogo. Las rutas CRUD generadas lo usan como filtro base de lectura, y `template.json` lo refleja para que el setup lo asigne automáticamente a los roles correctos.
+
 El comando es idempotente y se puede re-ejecutar tras corregir el estado del hub (fila `applications` faltante, API key incorrecta, etc.). Sale con código no-cero al primer fallo de auth para no spamear al hub.
 
 ## Qué vive dónde
