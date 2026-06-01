@@ -4,9 +4,15 @@ All notable changes to the CI4 FAQ Domain template will be documented in this fi
 
 ## [Unreleased]
 
+## [1.2.0] — 2026-06-01
+
+### Added
+
+- **Unit tests for SyncPermissions and ConfigWireman** — comprehensive test coverage for permission sync command and config AST manipulation wiring.
+
 ### Changed
 
-- **CLAUDE.md documentation** — clarified permission sync flow, template configuration prerequisites, and hub integration requirements for domain app setup.
+- **CLAUDE.md documentation** — clarified permission sync flow, template configuration prerequisites, hub integration requirements, and enhanced setup guidance for domain app initialization.
 
 ## [1.1.0] — 2026-05-31
 
