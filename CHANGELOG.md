@@ -4,6 +4,10 @@ All notable changes to the CI4 FAQ Domain template will be documented in this fi
 
 ## [Unreleased]
 
+### Changed
+
+- **CLAUDE.md documentation** — clarified permission sync flow, template configuration prerequisites, and hub integration requirements for domain app setup.
+
 ## [1.1.0] — 2026-05-31
 
 ### Added
