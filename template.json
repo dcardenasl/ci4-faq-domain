@@ -66,6 +66,7 @@
     { "code": "faqCategory.write", "roles": ["admin", "superadmin"] },
     { "code": "faqCategory.delete","roles": ["superadmin"] }
   ],
+  "mirror_to_hub": true,
   "admin_modules": [
     {
       "resource": "FaqCategory",
