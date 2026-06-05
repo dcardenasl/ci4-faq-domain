@@ -20,16 +20,16 @@ class HubClient extends CoreHubClient
      */
     public function findRoleByCode(string $code, string $bearerToken): ?array
     {
-        $payload = $this->request('GET', '/api/v1/iam/roles', [
+        $data = $this->request('GET', '/api/v1/iam/roles', [
             'headers' => array_merge($this->appKeyHeaders(), [
                 'Authorization' => 'Bearer ' . $bearerToken,
             ]),
             'query' => ['filter[code]' => $code, 'per_page' => 1],
         ]);
 
-        $data = $payload['data'] ?? [];
+        $items = $data['items'] ?? $data;
 
-        return $data[0] ?? null;
+        return is_array($items) ? ($items[0] ?? null) : null;
     }
 
     /**
