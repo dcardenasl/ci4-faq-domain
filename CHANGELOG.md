@@ -4,6 +4,13 @@ All notable changes to the CI4 FAQ Domain template will be documented in this fi
 
 ## [Unreleased]
 
+### Fixed
+
+- **Permission codes for FaqCategory** (`DomainPermissions.php`, `Routes/v1/support.php`, `template.json`) — renamed `faqCategory.*` codes to `faq-category.*` to follow the dot-separated, kebab-case convention enforced by `check-template-contracts.sh`; route filters and template permission entries updated to match.
+- **`FaqCategory` module and sidebar refs in `template.json`** — corrected `admin_modules[0].module` from `"Faq"` to `"FaqCategory"`, updated `category_id` relation route slug from `faqCategories` to `faq-categories`, and fixed the sidebar entry's `module` reference to match the renamed module.
+- **`HubClient::findRoleByCode()`** — now reads `data.items[]` from the paginated hub response instead of assuming the bare `data[]` is a flat array; returns `null` when `items` is empty. Covered by two new unit tests.
+- **`init.sh` CLI arg parsing** — added `=`-form alternatives for `--docker-container`, `--admin-token`, and `--assign-to-role` flags; spark permission-sync args are now built as a proper bash array to prevent word-splitting on values with spaces.
+
 ## [1.2.0] — 2026-06-01
 
 ### Added
