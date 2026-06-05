@@ -45,7 +45,7 @@ All notable changes to the CI4 FAQ Domain template will be documented in this fi
 - Comprehensive test suites for controllers, models, and services
 - OpenAPI documentation for all FAQ endpoints
 - Internationalization support (English and Spanish)
-- Domain permission codes: `faq.read`, `faq.write`, `faq.delete`, `faqCategory.read`, `faqCategory.write`, `faqCategory.delete`
+- Domain permission codes: `faq.read`, `faq.write`, `faq.delete`, `faq-category.read`, `faq-category.write`, `faq-category.delete`
 - Integration with `ci4-api-core` v0.9.2 for base infrastructure
 
 ### Fixed
