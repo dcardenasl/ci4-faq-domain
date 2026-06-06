@@ -28,8 +28,8 @@ class DomainPermissions
         ['code' => 'faq.read',            'resource' => 'faqs',           'action' => 'read',   'description' => 'Read FAQs'],
         ['code' => 'faq.write',           'resource' => 'faqs',           'action' => 'write',  'description' => 'Create/Update FAQs'],
         ['code' => 'faq.delete',          'resource' => 'faqs',           'action' => 'delete', 'description' => 'Delete FAQs'],
-        ['code' => 'faqCategory.read',    'resource' => 'faqcategories',  'action' => 'read',   'description' => 'Read FAQ Categories'],
-        ['code' => 'faqCategory.write',   'resource' => 'faqcategories',  'action' => 'write',  'description' => 'Create/Update FAQ Categories'],
-        ['code' => 'faqCategory.delete',  'resource' => 'faqcategories',  'action' => 'delete', 'description' => 'Delete FAQ Categories'],
+        ['code' => 'faq-category.read',   'resource' => 'faqcategories',  'action' => 'read',   'description' => 'Read FAQ Categories'],
+        ['code' => 'faq-category.write',  'resource' => 'faqcategories',  'action' => 'write',  'description' => 'Create/Update FAQ Categories'],
+        ['code' => 'faq-category.delete', 'resource' => 'faqcategories',  'action' => 'delete', 'description' => 'Delete FAQ Categories'],
     ];
 }

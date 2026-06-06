@@ -58,18 +58,19 @@
     }
   ],
   "permissions": [
-    { "code": "items.read",       "roles": ["user", "admin", "superadmin"] },
-    { "code": "faq.read",          "roles": ["user", "admin", "superadmin"] },
-    { "code": "faq.write",         "roles": ["admin", "superadmin"] },
-    { "code": "faq.delete",        "roles": ["superadmin"] },
-    { "code": "faqCategory.read",  "roles": ["user", "admin", "superadmin"] },
-    { "code": "faqCategory.write", "roles": ["admin", "superadmin"] },
-    { "code": "faqCategory.delete","roles": ["superadmin"] }
+    { "code": "items.read",           "roles": ["user", "admin", "superadmin"] },
+    { "code": "faq-category.read",    "roles": ["user", "admin", "superadmin"] },
+    { "code": "faq-category.write",   "roles": ["admin", "superadmin"] },
+    { "code": "faq-category.delete",  "roles": ["superadmin"] },
+    { "code": "faq.read",             "roles": ["user", "admin", "superadmin"] },
+    { "code": "faq.write",            "roles": ["admin", "superadmin"] },
+    { "code": "faq.delete",           "roles": ["superadmin"] }
   ],
+  "mirror_to_hub": true,
   "admin_modules": [
     {
       "resource": "FaqCategory",
-      "module": "Faq",
+      "module": "FaqCategory",
       "api_path": "/support/faq-categories",
       "service": "domain",
       "fields": "name:string:required,slug:string:required,is_active:boolean"
@@ -79,12 +80,12 @@
       "module": "Faq",
       "api_path": "/support/faqs",
       "service": "domain",
-      "fields": "question:string:required,answer:text:required,category_id:relation:required:faqCategories,is_published:boolean,sort_order:int:required"
+      "fields": "question:string:required,answer:text:required,category_id:relation:required:faq-categories,is_published:boolean,sort_order:int:required"
     }
   ],
   "admin_sidebar": [
     {
-      "module": "Faq",
+      "module": "FaqCategory",
       "label": "Faq.sidebar_label",
       "icon": "help-circle",
       "permission": "faq.read",
