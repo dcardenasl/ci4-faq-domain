@@ -4,6 +4,10 @@ All notable changes to the CI4 FAQ Domain template will be documented in this fi
 
 ## [Unreleased]
 
+### Fixed
+
+- **Test directory casing** — renamed `tests/unit`, `tests/integration`, `tests/feature` to PascalCase (`tests/Unit`, `tests/Integration`, `tests/Feature`) and aligned `phpunit.xml` accordingly. The lowercase directories did not match the PascalCase namespaces (`Tests\Unit\…`) under the `"Tests\\": "tests/"` PSR-4 root, so on case-sensitive filesystems the test classes failed to autoload and the suites were silently empty.
+
 ## [1.3.0] — 2026-06-05
 
 ### Added
