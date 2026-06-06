@@ -4,6 +4,12 @@ All notable changes to the CI4 FAQ Domain template will be documented in this fi
 
 ## [Unreleased]
 
+## [1.3.0] — 2026-06-05
+
+### Added
+
+- **`mirror_to_hub` field in `template.json`** — new optional boolean field set to `true`; signals kickstart to also mirror domain permissions under hub app `self` (`application_id=1`) for admin UI gating. Requires kickstart v1.13.0+ which reads this field during `apply_template()`.
+
 ### Fixed
 
 - **Permission codes for FaqCategory** (`DomainPermissions.php`, `Routes/v1/support.php`, `template.json`) — renamed `faqCategory.*` codes to `faq-category.*` to follow the dot-separated, kebab-case convention enforced by `check-template-contracts.sh`; route filters and template permission entries updated to match.
