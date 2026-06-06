@@ -4,6 +4,10 @@ All notable changes to the CI4 FAQ Domain template will be documented in this fi
 
 ## [Unreleased]
 
+### Changed
+
+- **`dcardenasl/ci4-api-core` constraint** — bumped from `^0.9.0` to `^1.0` (locked v1.0.0). The v0.9.2 → v1.0.0 range is purely additive, so no code changes were required. This unblocks `dcardenasl/ci4-api-scaffolding` v0.7.8 (which requires core `^1.0`), bringing the PascalCase test-directory output to generated CRUD modules.
+
 ### Fixed
 
 - **Test directory casing** — renamed `tests/unit`, `tests/integration`, `tests/feature` to PascalCase (`tests/Unit`, `tests/Integration`, `tests/Feature`) and aligned `phpunit.xml` accordingly. The lowercase directories did not match the PascalCase namespaces (`Tests\Unit\…`) under the `"Tests\\": "tests/"` PSR-4 root, so on case-sensitive filesystems the test classes failed to autoload and the suites were silently empty.
