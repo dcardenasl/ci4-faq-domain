@@ -4,6 +4,8 @@ All notable changes to the CI4 FAQ Domain template will be documented in this fi
 
 ## [Unreleased]
 
+## [1.3.1] — 2026-06-06
+
 ### Changed
 
 - **`dcardenasl/ci4-api-core` constraint** — bumped from `^0.9.0` to `^1.0` (locked v1.0.0). The v0.9.2 → v1.0.0 range is purely additive, so no code changes were required. This unblocks `dcardenasl/ci4-api-scaffolding` v0.7.8 (which requires core `^1.0`), bringing the PascalCase test-directory output to generated CRUD modules.
